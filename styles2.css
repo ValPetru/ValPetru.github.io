@@ -1,0 +1,107 @@
+/* Estilos básicos para la página */
+@font-face {
+    font-family: 'Valentine';
+    src: url('fuente/Valentine.ttf') format('truetype'); /* Ruta y formato corregidos */
+    font-weight: normal;
+    font-style: normal;
+	font-size:40px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana */
+    background-color: black;
+    background-image: url('bubu.jpg');
+    position: relative;
+    overflow: auto; /* Permite el scroll */
+}
+
+main {
+    min-height: 100vh; /* Asegura que el main ocupe al menos el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+h1 {
+	margin:0%;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    text-shadow: #75393b 1px 0 10px;
+}
+/* Contenedor para la lluvia de gotas de agua */
+#rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden; /* Evita que las gotas se salgan del contenedor */
+}
+
+/* Estilo de las gotas de agua */
+.raindrop {
+    position: absolute;
+    top: -50px; /* Empezamos desde arriba de la pantalla */
+    width: 10px;
+    height: 20px;
+    background-color: rgba(0, 191, 255, 0.7); /* Azul para las gotas */
+    border-radius: 50%;
+    animation: rain 1.5s linear infinite; /* Animación de caída */
+}
+
+@keyframes rain {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Empieza desde la parte superior */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh); /* Las gotas caen hasta el fondo */
+    }
+}
+.papel-carta {
+    margin: 1% auto 100px; /* 20px arriba, centrado horizontalmente, 100px abajo */
+    width: auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+.papel-carta {
+    margin: 1% auto 20px; /* Reduced bottom margin to 20px */
+    width: auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+.botones-container {
+    display: flex;
+    gap: 30px;
+	margin-bottom:2%;
+}
+
+.boton-link {
+    text-decoration: none; /* Evita el subrayado de los enlaces */
+}
+
+.boton {
+	margin:0%;
+    padding: 15px 30px;
+	font-family: 'Valentine';
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color:#6eb3eb;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #5f829e;
+	color: grey;
+}

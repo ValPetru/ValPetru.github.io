@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer fast bubu</title>
+    <link rel="stylesheet" href="preguntas.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="manifest" href="image/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="8604663346218614199"
+		data-share-method="host" data-aspect-ratio="1.23333" data-width="100%">
+		<a href="https://tenor.com/view/milk-and-mocha-milk-and-mocha-bear-gif-8604663346218614199">
+		Milk And Mocha Milk And Mocha Bear Sticker</a>from 
+		<a href="https://tenor.com/search/milk+and+mocha-stickers">
+		Milk And Mocha Stickers</a></div> 
+		<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <!-- Primera pregunta -->
+        <div class="pregunta-superior" id="pregunta1">
+            What do I love the most about you?
+        </div>
+
+        <div class="respuestas-container" id="respuestas1">
+            <button class="respuesta" data-correct="false">波波</button>
+            <button class="respuesta" data-correct="true">胖胖</button>
+            <button class="respuesta" data-correct="false">屁屁</button>
+        </div>
+
+        <!-- Segunda pregunta (oculta al principio) -->
+        <div class="pregunta-superior" id="pregunta2" style="display: none;">
+            What's my favorite thing to do together?
+        </div>
+
+        <div class="respuestas-container" id="respuestas2" style="display: none;">
+            <button class="respuesta" data-correct="false">Eating</button>
+            <button class="respuesta" data-correct="false">Chatting</button>
+            <button class="respuesta" data-correct="true">啪啪啪</button>
+        </div>
+
+        <!-- Tercera pregunta (oculta al principio) -->
+        <div class="pregunta-superior" id="pregunta3" style="display: none;">
+            What do I love about sleeping with bubu?
+        </div>
+
+        <div class="respuestas-container" id="respuestas3" style="display: none;">
+            <button class="respuesta" data-correct="false">Your embrace</button>
+            <button class="respuesta" data-correct="false">Your Farts</button>
+			<button class="respuesta" data-correct="false">Your warmth</button>
+			<button class="respuesta" data-correct="false">Your snoring</button>
+			<button class="respuesta" data-correct="true">They are all correct</button>
+        </div>
+
+        <!-- Cuarta pregunta (oculta al principio) -->
+        <div class="pregunta-superior" id="pregunta4" style="display: none;">
+            What's little chino's name?
+        </div>
+
+        <div class="respuestas-container" id="respuestas4" style="display: none;">
+            <button class="respuesta" data-correct="false">Buba</button>
+            <button class="respuesta" data-correct="false">Biba</button>
+            <button class="respuesta" data-correct="true">Bubabu</button>
+			<button class="respuesta" data-correct="false">Bimbimbambam</button>
+			<button class="respuesta" data-correct="false">Bibabu</button>
+			<button class="respuesta" data-correct="false">Bubu</button>
+        </div>
+
+        <div class="botones-container">
+            <a href="yes.html" class="boton-link">
+                <button class="boton">Yes</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Función para mezclar un array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Intercambiar elementos
+            }
+        }
+
+        // Función para barajar las respuestas en las preguntas
+        function shuffleAnswers() {
+            const respuestaContainers = ['#respuestas1', '#respuestas2', '#respuestas3', '#respuestas4'];
+            
+            respuestaContainers.forEach((containerId) => {
+                const container = document.querySelector(containerId);
+                const respuestas = Array.from(container.getElementsByClassName('respuesta'));
+                
+                shuffleArray(respuestas); // Mezclar las respuestas
+                
+                // Vaciamos el contenedor y volvemos a agregar las respuestas en el nuevo orden
+                container.innerHTML = '';
+                respuestas.forEach((respuesta) => {
+                    container.appendChild(respuesta);
+                });
+            });
+        }
+
+        // Llamamos a la función para barajar las respuestas al cargar la página
+        window.onload = shuffleAnswers;
+
+        // Obtener todos los botones de respuesta
+        const respuestas1 = document.querySelectorAll('#respuestas1 .respuesta');
+        const respuestas2 = document.querySelectorAll('#respuestas2 .respuesta');
+        const respuestas3 = document.querySelectorAll('#respuestas3 .respuesta');
+        const respuestas4 = document.querySelectorAll('#respuestas4 .respuesta');
+        
+        const pregunta1 = document.querySelector('#pregunta1');
+        const respuestasContainer1 = document.querySelector('#respuestas1');
+        const pregunta2 = document.querySelector('#pregunta2');
+        const respuestasContainer2 = document.querySelector('#respuestas2');
+        const pregunta3 = document.querySelector('#pregunta3');
+        const respuestasContainer3 = document.querySelector('#respuestas3');
+        const pregunta4 = document.querySelector('#pregunta4');
+        const respuestasContainer4 = document.querySelector('#respuestas4');
+        
+        // Función para manejar las respuestas de la primera ronda
+        respuestas1.forEach((respuesta) => {
+            respuesta.addEventListener('click', function() {
+                if (respuesta.getAttribute('data-correct') === 'true') {
+                    pregunta1.style.display = 'none';
+                    respuestasContainer1.style.display = 'none';
+                    pregunta2.style.display = 'block';
+                    respuestasContainer2.style.display = 'block';
+                } else {
+                    alert('Wrong bubu 😘 try again!');
+                }
+            });
+        });
+
+        // Función para manejar las respuestas de la segunda ronda
+        respuestas2.forEach((respuesta) => {
+            respuesta.addEventListener('click', function() {
+                if (respuesta.getAttribute('data-correct') === 'true') {
+                    pregunta2.style.display = 'none';
+                    respuestasContainer2.style.display = 'none';
+                    pregunta3.style.display = 'block';
+                    respuestasContainer3.style.display = 'block';
+                } else {
+                    alert('Keep trying BITCH 💗💗💗');
+                }
+            });
+        });
+
+        // Función para manejar las respuestas de la tercera ronda
+        respuestas3.forEach((respuesta) => {
+            respuesta.addEventListener('click', function() {
+                if (respuesta.getAttribute('data-correct') === 'true') {
+                    pregunta3.style.display = 'none';
+                    respuestasContainer3.style.display = 'none';
+                    pregunta4.style.display = 'block';
+                    respuestasContainer4.style.display = 'block';
+                } else {
+                    alert('Dont you know me 🤨');
+                }
+            });
+        });
+
+        // Función para manejar las respuestas de la cuarta ronda y redirigir
+        respuestas4.forEach((respuesta) => {
+            respuesta.addEventListener('click', function() {
+                if (respuesta.getAttribute('data-correct') === 'true') {
+                    // Redirigir a no10.html
+                    window.location.href = "no10.html";
+                } else {
+                    alert('Nice try 😏');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Are Mine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="manifest" href="image/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="15017556" data-share-method="host" data-aspect-ratio="1.23552" data-width="100%">
+            <a href="https://tenor.com/view/milk-and-mocha-running-away-chasing-hearts-cute-gif-15017556">Milk And Mocha Running Away Sticker</a> from
+            <a href="https://tenor.com/search/milk+and+mocha-stickers">Milk And Mocha Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <div class="pregunta-superior">
+            Don't worry, you will be mine anyways 😈
+        </div>
+        <div class="btn">
+            <a href="yes.html">Yes</a>
+            <a href="#" id="btn-random">No</a> <!-- Updated id to match the JavaScript -->
+        </div>
+    </div>
+	<script>
+	const btnNo = document.querySelector("#btn-random"); // Select the "No" button
+
+	function moverAleatoriamente(btn) {
+		btn.style.position = "absolute"; // Set position to absolute
+		btn.style.fontWeight = "bolder"; // Make the text bolder
+		btn.style.top = Math.floor(Math.random() * 90 + 5) + "%"; // Random top position (5% to 95%)
+		btn.style.left = Math.floor(Math.random() * 90 + 5) + "%"; // Random left position (5% to 95%)
+	}
+
+	btnNo.addEventListener("mouseenter", function (e) {
+		moverAleatoriamente(e.target); // Move the button randomly on mouse enter
+	});
+</script>
+</body>
+</html>

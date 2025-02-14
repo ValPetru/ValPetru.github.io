@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Chance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="manifest" href="image/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="15502274870664004922" 
+        data-share-method="host" data-aspect-ratio="1" data-width="100%">
+        <a href="https://tenor.com/view/play-fight-gif-15502274870664004922">
+        Play Fight Sticker</a>from <a href="https://tenor.com/search/play+fight-stickers">
+        Play Fight Stickers</a></div> 
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <div class="pregunta-superior">
+            why don't you just give up and accept to be your wifey's Valentine
+        </div>
+        <div class="btn">
+            <a href="yes.html">Yes</a>
+            <a href="#" id="btn-random">No</a> <!-- Botón "No" -->
+        </div>
+    </div>
+
+    <script>
+    const btnNo = document.querySelector("#btn-random"); // Selecciona el botón "No"
+    let clickCount = 0; // Contador de clics
+    const maxClicks = 35; // Número máximo de clics permitidos
+
+    function moverAleatoriamente(btn) {
+        // Guarda la posición actual del botón "No"
+        const buttonRect = btn.getBoundingClientRect();
+        const buttonX = buttonRect.left;
+        const buttonY = buttonRect.top;
+
+        // Crea una nueva imagen y la coloca en la posición anterior del botón "No"
+        const img = document.createElement("img");
+        img.src = "gotyou.png"; // Ruta de la imagen
+        img.alt = "Got You";
+        img.style.position = "absolute";
+        img.style.left = `${buttonX}px`;
+        img.style.top = `${buttonY}px`;
+        img.style.width = "130px"; // Tamaño pequeño
+        img.style.height = "100px"; // Tamaño pequeño
+        img.style.pointerEvents = "none"; // Permite que los clics pasen a través de la imagen
+        document.body.appendChild(img); // Añade la imagen al cuerpo del documento
+
+        // Cambia la posición del botón "No" de manera aleatoria
+        btn.style.position = "absolute";
+        btn.style.fontWeight = "bolder";
+        btn.style.top = Math.floor(Math.random() * 90 + 5) + "%"; // Posición aleatoria en Y (5% a 95%)
+        btn.style.left = Math.floor(Math.random() * 90 + 5) + "%"; // Posición aleatoria en X (5% a 95%)
+
+        // Incrementa el contador de clics
+        clickCount++;
+
+        // Si se alcanza el número máximo de clics, deshabilita el botón
+        if (clickCount >= maxClicks) {
+            // Redirigir a no10.html
+            window.location.href = "final.html";
+        }
+    }
+
+    function handleClick(e) {
+        e.preventDefault(); // Evita que el enlace redirija
+        moverAleatoriamente(e.target); // Mueve el botón y deja la imagen
+    }
+
+    btnNo.addEventListener("click", handleClick); // Añade el evento de clic al botón "No"
+</script>
+
+
+</body>
+</html>

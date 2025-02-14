@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think of it</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="9646460172275481873" 
+            data-share-method="host" data-aspect-ratio="1" data-width="100%">
+            <a href="https://tenor.com/view/milk-and-mocha-gif-9646460172275481873">
+                Milk And Mocha Sticker
+            </a> from 
+            <a href="https://tenor.com/search/milk+and+mocha-stickers">Milk And Mocha Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        
+        <div class="pregunta-superior">
+            ¿Are you sure bubu? Think of it
+        </div>
+        <div class="botones-container">
+            <a href="yes.html" class="boton-link">
+                <button class="boton" id="yes-button">Yes</button>
+            </a>
+            <a href="no3.html" class="boton-link">
+                <button class="boton">No</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Recuperamos el tamaño del botón desde localStorage
+        let currentSize = parseInt(localStorage.getItem("buttonSize"));
+        
+        // Incrementamos el tamaño del botón en un 10%
+        currentSize += 50;
+        
+        // Aplicamos el nuevo tamaño al botón
+        const yesButton = document.getElementById("yes-button");
+        yesButton.style.transform = `scale(${currentSize / 100})`;
+
+        // Guardamos el nuevo tamaño en localStorage para la siguiente página
+        localStorage.setItem("buttonSize", currentSize);
+    </script>
+</body>
+</html>

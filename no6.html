@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why are you trying so hard?</title>
+    <link rel="stylesheet" href="styles.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+	<link rel="manifest" href="image/site.webmanifest">
+</head>
+<body>
+	<div class="container">
+		<div class="tenor-gif-embed" data-postid="4769439360994049457" data-share-method="host" data-aspect-ratio="1.36066" data-width="100%"><a href="https://tenor.com/view/cute-adorable-sticker-stickers-gif-4769439360994049457">Cute Adorable GIF</a>from <a href="https://tenor.com/search/cute-gifs">Cute GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+		<div class="pregunta-superior">
+			Why are you trying so hard?
+		</div>
+		<div class="botones-container">
+			<a href="yes.html" class="boton-link">
+				<button class="boton">Yes</button>
+			</a>
+			<a href="no7.html" class="boton-link">
+				<div class="no-button-container">
+					<img id="ositoImage" src="gotyou.png" alt="Osito" class="osito-img">
+					<button id="noButton" class="boton">No</button>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script>
+    window.onload = function() {
+        const noButton = document.getElementById('noButton');
+        const ositoImage = document.getElementById('ositoImage');
+        
+        // Obtener las dimensiones del contenedor
+        const container = document.querySelector('.container');
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+
+        // Generar posiciones aleatorias para el botón y la imagen
+        const randomX = Math.random() * (containerWidth - noButton.offsetWidth);
+        const randomY = Math.random() * (containerHeight - noButton.offsetHeight);
+
+        // Establecer la posición aleatoria para ambos
+        noButton.style.position = 'absolute';
+        ositoImage.style.position = 'absolute';
+        
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+        
+        ositoImage.style.left = `${randomX}px`;
+        ositoImage.style.top = `${randomY}px`;
+    };
+</script>
+</body>
+</html>

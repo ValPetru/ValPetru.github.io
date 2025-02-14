@@ -1,0 +1,254 @@
+/* Fuentes */
+@font-face {
+    font-family: 'Valentine';
+    src: url('fuente/Valentine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 40px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('hearts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10%;
+    max-width: 70%;
+    margin: 10%;
+}
+
+.tenor-gif-embed {
+    max-width: 40%;
+}
+
+.pregunta-superior {
+    font-family: 'Valentine';
+    font-size: 60px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow: #75393b 1px 0 10px;
+}
+
+
+.botones-container {
+    display: flex;
+    gap: 50px; /* Aumentar el espacio entre los botones */
+    justify-content: center; /* Asegura que los botones estén centrados */
+    align-items: center; /* Asegura que los botones estén alineados verticalmente */
+    margin-top: 20px; /* Asegura que haya un margen superior */
+}
+
+.boton-link {
+    text-decoration: none;
+}
+
+.boton {
+    padding: 15px 30px;
+    font-family: 'Valentine';
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8a8a;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Aseguramos que el cambio de tamaño sea suave */
+    flex-shrink: 0; /* Evita que el botón se encoja cuando se agranda */
+}
+
+.boton:hover {
+    background-color: #a35555;
+    color: grey;
+}
+
+.boton#yes-button {
+    transition: transform 0.3s ease; /* Animación suave al cambiar el tamaño */
+}
+
+/* Estilo para la imagen de osito */
+.osito-img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1; /* Imagen por encima del botón */
+}
+
+.no-button-container {
+    position: relative;
+}
+
+/* Animaciones y efectos adicionales pueden ir aquí */
+
+
+/* Estilos para los botones en .btn */
+.btn {
+    display: flex;
+    gap: 30px; /* Espacio entre los botones */
+    justify-content: center; /* Centrar los botones horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.btn a {
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    padding: 15px 30px;
+    font-family: 'Valentine';
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8a8a; /* Color de fondo */
+    color: white; /* Color del texto */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn a:hover {
+    background-color: #a35555; /* Color de fondo al pasar el mouse */
+    color: grey; /* Color del texto al pasar el mouse */
+}
+
+
+/* Estilos para la lluvia de corazones */
+#heart-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: fall 5s linear infinite;  /* Duración de 5 segundos */
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
+/* Animación del beso volador */
+@keyframes kissFly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px) scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) translateX(100px) scale(0);
+        opacity: 0;
+    }
+}
+
+.kiss {
+    position: absolute;
+    font-size: 50px;
+    color: #ff007f;
+    animation: kissFly 2s ease forwards;  /* El beso volador durará 2 segundos */
+    z-index: 10000;
+}
+/* Estilos para el papel tipo carta con imagen */
+.papel-carta {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 0%;
+}
+
+.imagen-carta {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.contenido-papel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    color: #333;
+    font-size: 24px;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    z-index: 10;
+    padding: 20px;
+}
+
+.contenido-papel p:first-child {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.contenido-papel p:last-child {
+    margin-bottom: 0;
+}
+/* Animación de balanceo rápido y pausa */
+@keyframes balanceAndPause {
+    0%, 10% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }*/
+    10% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(1.05);
+    }
+    20% {
+        transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+    }
+    30% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(1.05);
+    }
+    40% {
+        transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+}
+
+/* Estilos para el sobre */
+.sobre-cerrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar el sobre */
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.10s ease;
+    animation: balanceAndPause 1s infinite; /* Aplicar la animación de balanceo y pausa */
+}
+
+.sobre-cerrado:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}

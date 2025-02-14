@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes - Valentine</title>
+    <link rel="stylesheet" href="styles.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+	<link rel="manifest" href="image/site.webmanifest">
+</head>
+<body>
+    <!-- Audio de fondo (inicialmente silenciado) -->
+    <audio id="background-audio" autoplay loop muted>
+        <source src="feather.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Contenedor para la lluvia de corazones -->
+    <div id="heart-rain"></div>
+
+    <!-- Sobre cerrado -->
+    <div id="sobre" class="sobre-cerrado">
+        <img src="sobre.jpg" alt="Sobre cerrado" class="imagen-sobre">
+    </div>
+
+    <!-- Carta (inicialmente oculta) -->
+    <div id="carta" class="papel-carta" style="display: none;">
+        <img src="letter.jpeg" alt="Carta de San Valentín" class="imagen-carta">
+    </div>
+
+    <script>
+        // Activar el sonido después de que el usuario interactúe con la página
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('background-audio');
+            audio.muted = false; // Desactivar el silencio
+            audio.play(); // Reproducir el audio
+        }, { once: true }); // El evento solo se ejecuta una vez
+
+        // Mostrar la carta y ocultar el sobre al hacer clic en el sobre
+        document.getElementById('sobre').addEventListener('click', function() {
+            document.getElementById('sobre').style.display = 'none'; // Ocultar el sobre
+            document.getElementById('carta').style.display = 'block'; // Mostrar la carta
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
